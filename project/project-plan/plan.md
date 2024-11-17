@@ -126,7 +126,7 @@ _Note: Everyone should be able to see the design and approve it_
 
 ## Charts & Timeline
 
-All the charts here are created by the Mermaid library, you can see the code for the charts [here](https://github.com/witch-puzzles/.github/blob/main/project/charts).
+All the charts here are created by the Mermaid library, you can see the code for the charts [here](https://github.com/witch-puzzles/.github/blob/main/project/project-plan/charts).
 
 Gantt Chart below is the graphical representation of the project plan. It shows the tasks, their start and end dates, and the dependencies between them.
 

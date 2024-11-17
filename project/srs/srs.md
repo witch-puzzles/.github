@@ -69,21 +69,21 @@ The document is structured as follows:
 **Overall System Use Case Diagram**  
   The main use case diagram will depict interactions between user types and the core functionalities: Registration and Authentication, Puzzle Display and Solving, Progress Tracking, and Leaderboard Viewing.
 
-![](https://raw.githubusercontent.com/witch-puzzles/.github/refs/heads/main/project/charts/srs/main-diagram.png)
+![](charts/main-diagram.png)
 
 **Additional Use Case Diagrams**  
 
 - Diagram for Registration and Authentication
 
-![](https://raw.githubusercontent.com/witch-puzzles/.github/refs/heads/main/project/charts/srs/auth-diagram.png)
+![](charts/auth-diagram.png)
 
 - Diagram for Puzzle Display and Solving
 
-![](https://raw.githubusercontent.com/witch-puzzles/.github/refs/heads/main/project/charts/srs/solve-diagram.png)
+![](charts/solve-diagram.png)
 
 - Diagram for Leaderboard and User Progress Tracking
 
-![](https://raw.githubusercontent.com/witch-puzzles/.github/refs/heads/main/project/charts/srs/leaderboard-diagram.png)
+![](charts/leaderboard-diagram.png)
 
 ### 3.4 Use Cases
 
