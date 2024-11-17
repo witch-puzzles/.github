@@ -140,6 +140,7 @@ The document is structured as follows:
 ## 5. FLOW DIAGRAMS
 ### 5.1 General Data Model
 The entity relationship diagram for our database.
+
 ![](charts/database-erd.png)
 
 ### 5.2 Important Data Considerations
