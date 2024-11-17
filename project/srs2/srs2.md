@@ -169,13 +169,80 @@ The entity relationship diagram for our database.
 ### 5.3 Data Flow Diagram
 
 #### Level 0
-**NEED EXPLANATION**
+
+##### External Entities:
+- **Users**: The end-users who interact with the platform to register, solve puzzles, and check their standings on the leaderboard.
+- **Database**: Represents the data storage for the platform (e.g., user information, puzzle data, leaderboard entries).
+
+##### Data Flows:
+- **Users to System**:
+  - Registration/Login details.
+  - Puzzle solutions and interactions.
+  - Requests for leaderboard or profile data.
+- **System to Users**:
+  - Response to login or registration attempts.
+  - Puzzle data for display.
+  - Updated leaderboard or profile information.
+- **System to Database**:
+  - Stores user credentials and puzzle completion data.
+  - Retrieves leaderboard rankings and puzzle metadata.
+- **Database to System**:
+  - Provides data needed for user requests.
+
 ![](charts/dfd-level0.png)
 
 #### Level 1
-**NEED EXPLANATION**
+
+##### Processes:
+- **User Management**:  
+  Handles user-related activities such as:
+  - Registration (stores name, email, password hash).
+  - Login (validates credentials).
+  - Profile updates.
+- **Puzzle Management**:
+  - Retrieves puzzle metadata (title, description, difficulty) for users to select and solve.
+  - Validates puzzle solutions (ensures correctness).
+  - Updates puzzle completion records.
+- **Leaderboard Management**:
+  - Retrieves leaderboard rankings for specific puzzles.
+  - Updates rankings when new completions are logged.
+
+##### Data Stores:
+- **User Data Store**: Stores user information like `user_id`, `email`, and encrypted passwords.
+- **Puzzle Data Store**: Contains puzzle details such as `puzzle_id`, `title`, and `difficulty`.
+- **Leaderboard Data Store**: Stores rankings and completion times for puzzles.
+
+##### Flows:
+- Users interact with processes through input (e.g., login details, puzzle solutions).
+- Processes query the respective data stores for information or to update records.
+- The system sends responses (e.g., updated leaderboard) back to users.
+
 ![](charts/dfd-level1.png)
 
 #### Level 2
-**NEED EXPLANATION**
+
+##### Step 1: Puzzle Selection
+- The user selects a puzzle from a list displayed on the platform.
+- The system queries the Puzzle Data Store to fetch puzzle metadata (`title`, `description`, `difficulty`) and displays it to the user.
+
+##### Step 2: Solution Submission
+- The user submits a solution to the selected puzzle.
+- The system validates the solution:
+  - Checks correctness against stored solutions in the Puzzle Data Store.
+  - Ensures the user completed the puzzle within allowed parameters (e.g., time limits, no duplication).
+
+##### Step 3: Update Records
+- If the solution is valid, the system:
+  - Logs the completion in the `PuzzlesCompleted` Data Store (records `user_id`, `puzzle_id`, `time_taken`, and `completed_at` timestamp).
+  - Updates the `Leaderboard` Data Store for the puzzle:
+    - Recalculates rankings based on the new completion time.
+    - Saves the updated rankings.
+
+##### Step 4: Leaderboard Retrieval
+- The updated leaderboard is retrieved from the Leaderboard Data Store.
+- The system formats the leaderboard data and sends it to the user interface.
+
+##### Step 5: Response to User
+- The user sees the leaderboard, including their rank, time, and comparison with others.
+
 ![](charts/dfd-level2.png)
