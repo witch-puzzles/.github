@@ -200,22 +200,17 @@ The entity relationship diagram for our database.
   - Login (validates credentials).
   - Profile updates.
 - **Puzzle Management**:
-  - Retrieves puzzle metadata (title, description, difficulty) for users to select and solve.
-  - Validates puzzle solutions (ensures correctness).
+  - Retrieves puzzle data.
+  - Validates puzzle solutions.
   - Updates puzzle completion records.
 - **Leaderboard Management**:
   - Retrieves leaderboard rankings for specific puzzles.
   - Updates rankings when new completions are logged.
 
 ##### Data Stores:
-- **User Data Store**: Stores user information like `user_id`, `email`, and encrypted passwords.
-- **Puzzle Data Store**: Contains puzzle details such as `puzzle_id`, `title`, and `difficulty`.
+- **User Data Store**: Stores user information.
+- **Puzzle Data Store**: Contains puzzle details.
 - **Leaderboard Data Store**: Stores rankings and completion times for puzzles.
-
-##### Flows:
-- Users interact with processes through input (e.g., login details, puzzle solutions).
-- Processes query the respective data stores for information or to update records.
-- The system sends responses (e.g., updated leaderboard) back to users.
 
 ![](charts/dfd-level1.png)
 
@@ -223,12 +218,11 @@ The entity relationship diagram for our database.
 
 ##### Step 1: Puzzle Selection
 - The user selects a puzzle from a list displayed on the platform.
-- The system queries the Puzzle Data Store to fetch puzzle metadata (`title`, `description`, `difficulty`) and displays it to the user.
+- The system queries the Puzzle Data Store to fetch puzzle data and displays it to the user.
 
 ##### Step 2: Solution Submission
 - The user submits a solution to the selected puzzle.
 - The system validates the solution:
-  - Checks correctness against stored solutions in the Puzzle Data Store.
   - Ensures the user completed the puzzle within allowed parameters (e.g., time limits, no duplication).
 
 ##### Step 3: Update Records
