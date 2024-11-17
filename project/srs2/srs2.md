@@ -143,7 +143,28 @@ The entity relationship diagram for our database.
 ![](charts/database-erd.png)
 
 ### 5.2 Important Data Considerations
-**NEED EXPLANATION**
+#### 1. JSON (JavaScript Object Notation)
+- *Use Case*: Used to exchange data between the front-end and back-end of the website.
+- *Advantages*:
+  - Lightweight and easy to parse.
+  - Can be stored in SQL databases using JSON or JSONB data types for flexible and semi-structured data storage.
+- *Example*: Fetching puzzles or sending user progress updates between client and server.
+
+---
+
+#### SQL-Specific Considerations
+- *Structured Data: All core entities (e.g., User, Puzzle, Leaderboard) are stored in **SQL tables* with proper relationships.
+- *Data Formats*:
+  - *JSON*: To store semi-structured data like user preferences or dynamic puzzle metadata.
+- *Queries*:
+  - SQL will handle structured data operations like fetching leaderboards (SELECT), updating user progress (UPDATE), or inserting new puzzles (INSERT).
+
+---
+
+#### Considerations for Choosing a Format
+- *Efficiency*: JSON for dynamic or flexible fields; standard SQL tables for structured data.
+- *Readability*: JSON is human-readable for semi-structured data, while SQL schemas ensure clear organization for structured data.
+- *Ease of Use*: SQL ensures robust data management and relationships, while formats like JSON simplify data interchange.
 
 ### 5.3 Data Flow Diagram
 
