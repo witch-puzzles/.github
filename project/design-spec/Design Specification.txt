@@ -1,0 +1,19 @@
+-----------------------------
+DESIGN SPECIFICATION CONTENTS
+-----------------------------
+
+COVER PAGE
+	Course information, report name, project title, group name and members, date etc.
+
+1. INTRODUCTION
+	Goal, contents and organization of the document.
+
+2. SYSTEM ARCHITECTURE
+	2.1 System Architecture 
+	2.2 Component (Package) Diagram - Inputs, outputs of each component and services should be included. 
+
+3. LOW LEVEL DESIGN
+	3.1 Class Diagrams - A class diagram for each component. 
+	3.2 Sequence or Collaboration Diagrams for each Use Case. 
+	3.3 Data Flow Diagram: Update and extend your DFDs (if necessary) submitted in the Requirements Analysis documents based on the explanations in Software Design lecture.
+		Make sure your DFDs are Level 2 for, at least one of your subtasks/use cases. 
