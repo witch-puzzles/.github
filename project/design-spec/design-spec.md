@@ -28,7 +28,7 @@ The system is divided into the following key components:
    - **E-Mail Service (FOREIGN)**: Notifies users when a new record is broken in the leaderboard
 
 ### 2.2 Component (Package) Diagram
-Below is a description of the inputs, outputs, and services of each component:
+Description of the inputs, outputs, and services of each component:
 
 - **Frontend**:
   - **Inputs**: User interactions like puzzle selection, solving etc..
@@ -51,43 +51,7 @@ Below is a description of the inputs, outputs, and services of each component:
 
 ### 3.1 Class Diagrams
 
-
-UserService
-- getProfileData()
-- getUserByFirebaseID()
-- getPuzzleEntriesByUserId()
-- createUser()
-
-UserRepository
-- saveUser()
-- getUserByEmail()
-- getUserById()
-- getUserByFirebaseID()
-
-
-
-PuzzleService
-- getRandomPuzzle()
-- getPuzzleById()
-- validateSolution()
-- submitNewEntry()
-
-PuzzleRepository
-- getRandomPuzzle()
-- getPuzzleById()
-
-
-
-LeaderboardService
-- getLeaderboardByDifficulty()
-- getLeaderboardByUserId()
-- submitNewEntry()
-
-PuzzleEntryRepository
-- submitNewEntry()
-- getEntriesByDifficulty()
-- getEntriesByUserId()
-
+![](diagrams/design-spec-cd.png)
 
 ### 3.2 Sequence Diagrams
 
