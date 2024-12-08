@@ -51,22 +51,43 @@ Below is a description of the inputs, outputs, and services of each component:
 
 ### 3.1 Class Diagrams
 
-# NEEDS REVISION & DIAGRAMS
 
-#### User Management
-- **User**:
-  - Attributes: `id`, `email`, `passwordHash`, `name`, `profileData`
-  - Methods: `register()`, `login()`, `updateProfile()`
+UserService
+- getProfileData()
+- getUserByFirebaseID()
+- getPuzzleEntriesByUserId()
+- createUser()
 
-#### Puzzle Management
-- **Puzzle**:
-  - Attributes: `id`, `difficulty`, `data`, `solution`
-  - Methods: `fetchPuzzle()`, `validateSolution()`
+UserRepository
+- saveUser()
+- getUserByEmail()
+- getUserById()
+- getUserByFirebaseID()
 
-#### Leaderboard Management
-- **Leaderboard**:
-  - Attributes: `id`, `userId`, `puzzleId`, `completionTime`, `rank`
-  - Methods: `updateRankings()`, `getLeaderboard()`
+
+
+PuzzleService
+- getRandomPuzzle()
+- getPuzzleById()
+- validateSolution()
+- submitNewEntry()
+
+PuzzleRepository
+- getRandomPuzzle()
+- getPuzzleById()
+
+
+
+LeaderboardService
+- getLeaderboardByDifficulty()
+- getLeaderboardByUserId()
+- submitNewEntry()
+
+PuzzleEntryRepository
+- submitNewEntry()
+- getEntriesByDifficulty()
+- getEntriesByUserId()
+
 
 ### 3.2 Sequence Diagrams
 
