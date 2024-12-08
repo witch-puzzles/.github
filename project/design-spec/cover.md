@@ -10,9 +10,3 @@
 #### Lucas Holczinger
 #### Ata Türköz
 ### 08.12.2024
-
-```css
-h1, h2, h3, h4 {
-    text-align: center;
-}
-```
