@@ -22,10 +22,10 @@ The system is divided into the following key components:
 
 4. **Services**:
    - **User Service**: Tracks identified users and profile management.
-   - **Authentication Service**: Manages user registration, authentication, and profile management.
+   - **Authentication Service (FOREIGN)**: Allows for easy user registration, authentication, and profile management.
    - **Puzzle Service**: Handles puzzle fetching, validation, and completion recording.
    - **Leaderboard Service**: Updates and retrieves (filtered) leaderboard data.
-   - **E-Mail Service**: Notifies users when a new record is broken in the leaderboard
+   - **E-Mail Service (FOREIGN)**: Notifies users when a new record is broken in the leaderboard
 
 ### 2.2 Component (Package) Diagram
 Below is a description of the inputs, outputs, and services of each component:
@@ -45,11 +45,13 @@ Below is a description of the inputs, outputs, and services of each component:
   - **Outputs**: Query results (e.g., user data, leaderboard rankings).
   - **Services**: Provides structured and semi-structured data storage.
 
+![](diagrams/component-diagram.png)
+
 ## 3. LOW LEVEL DESIGN
 
 ### 3.1 Class Diagrams
 
-# NEEDS REVISION & Diagrams
+# NEEDS REVISION & DIAGRAMS
 
 #### User Management
 - **User**:
