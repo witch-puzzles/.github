@@ -1,0 +1,36 @@
+-----------------------------
+TEST SPECIFICATION CONTENTS
+-----------------------------
+
+COVER PAGE
+	Course information, report name, project title, group name and members, date, etc.
+
+1. INTRODUCTION
+        Our goal in creating the Witch Puzzles project was to create a puzzle repertoire for the puzzle enthusiasts where they can have fun solving puzzles they love for completely free.
+
+2. TEST PLAN
+        2.1 Testing Strategy
+                For unit testing, we used the Python pytest module and created some unit test files.
+                For module integration tests, we have used the bottom up approach as our project was slowly built from the tinier parts first.
+                For the system testing, we used the black box testing method to track down the bugs that would cause the website to generate incorrect results from the specified inputs.
+
+	2.2 Test Subjects - Consider the package diagram in the Design Document. Explain which data is subject to integration testing.
+                The user communicates with the frontend process through their browser. 
+
+	2.3 Black Box Testing - Partition valid and invalid input values into equivalence classes (Equivalence Partitioning). List your test cases in a table with their description, test input, and the expected output and map them to your use cases. See course slides.
+	2.4 White Box Testing - List your source code structure (packages, modules, functions). List all your unit tests, required mocks to execute these tests and their relation with the source code artifacts. Explain the testing tools you plan to use. See course slides.
+
+3. ADDITIONAL TESTS
+	Explain test cases and tools for each particular test if it applies to your project.
+		4.1 Security testing
+		4.2 Performance testing
+		4.3 Load/Stress testing
+		4.4 Acceptance testing
+	See course slides for more strategies if needed.
+
+4. TEST RESULTS
+	4.1 Provide a detailed report on your test results. Specify how many test cases are implemented and the coverage of your tests. Choose one of the following options for calculating the test coverage.
+		-Option 1: Calculate the percentage of the code coverage using test tools. You may put the output of the tool in your report as a figure or table.
+		-Option 2: Calculate the coverage by matching the test cases to the paths in the use case flows (defined in Requirement Document), and finding the ratio of the covered paths to all paths.
+	4.2 Results of the tests should be logged.
+	4.3 For the additional tests, log the results such as response time or performance metrics.
