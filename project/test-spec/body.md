@@ -25,27 +25,23 @@ The document is structured as follows:
 ## Test Subjects
 ### Frontend Testing Subjects
 
-- Landing Page: Ensure that the landing page loads correctly and is responsive on various devices.
-- Login Page: Validate that users can log in using their email addresses and using Google, and that appropriate error messages are shown for invalid credentials.
-- Puzzle Solving Interface: Test the interface for selecting puzzles, displaying puzzle data, and interacting with the solution input.
-- Puzzle Solving Results: Ensure the system accurately accepts or rejects solutions, and provides appropriate feedback.
-- Leaderboard Updates: Test that leaderboard data is displayed correctly after updates to the table.
-- Profile Page: Ensure users can view their profile details.
+- Ensure that the landing page loads correctly and is responsive on various devices.
+- Validate that users can log in using their email addresses and using Google and appropriate error messages are shown for invalid credentials.
+- Test the interface for selecting puzzles, displaying puzzle data, and interacting with the solution input.
+- Ensure the system accurately accepts or rejects solutions, and provides appropriate feedback.
+- Test that leaderboard data is displayed correctly after updates to the table.
+- Ensure users can view their profile details.
 
 ### Backend Testing Subjects
 
 - Ensure that the user registration, login, and authentication flow works correctly with the Firebase Authentication service.
+- Validate the correct storage of user data after successful registration (e.g., name, email, password hash).
 - Check that invalid credentials are properly rejected.
+- Test user data retrieval to ensure correct information is returned.
+- Ensure puzzle data is correctly stored for each puzzle after populating the database.
 - Ensure that puzzles are fetched correctly based on user selection (e.g., easy, medium, hard).
 - Ensure that puzzle completion records are updated correctly in the database.
 - Validate that the leaderboard correctly updates when a new puzzle is solved and that rankings are recalculated based on new completion times.
-
-### Database Testing Subjects
-
-- Validate the correct storage of user data after successful registration (e.g., name, email, password hash).
-- Test user data retrieval to ensure correct information is returned.
-- Ensure puzzle data is correctly stored and retrieved for each puzzle after populating the database.
-- Validate that leaderboard rankings are stored correctly, and that updates are performed when new solutions are logged.
 
 ### Functional Testing
 
