@@ -54,7 +54,7 @@ For system testing, we use both the black box and white box testing methods. We 
 - Ensure that puzzle completion recordfs are updated correctly in the database.
 - Validate that the leaderboard correctly updates when a new puzzle is solved and that rankings are recalculated based on new completion times.
 
-### Black Box Testing – Equivalence Partitioning
+### Black Box Testing
 | **Description** | **Test Input** | **Expected Output** | **Mapped Use Case** |
 |---|---|---|---|
 | Test User Registration with valid data | Valid name, email, password | Registration successful | User Registration |
