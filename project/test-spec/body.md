@@ -54,7 +54,7 @@ For system testing, we use both the black box and white box testing methods. We 
 - Ensure that puzzle completion recordfs are updated correctly in the database.
 - Validate that the leaderboard correctly updates when a new puzzle is solved and that rankings are recalculated based on new completion times.
 
-2.3 Black Box Testing – Equivalence Partitioning
+### Black Box Testing – Equivalence Partitioning
 
 For black box testing, we will partition valid and invalid input values into equivalence classes. Here’s how we can define test cases based on the components in your system:
 Test Case Table
@@ -82,51 +82,41 @@ Equivalence Classes:
         For Puzzle Solving: Invalid puzzle ID, invalid solution format, solution not within allowed time.
         For Leaderboard Retrieval: Invalid difficulty level ("extreme", "unknown").
 
-2.4 White Box Testing
+### White Box Testing
 
-White box testing requires us to understand the structure of the source code (including modules, functions, and classes) and list the corresponding unit tests, mocks, and tools. Here's the breakdown based on your design specification:
-Source Code Structure:
+White box testing requires us to understand the structure of the source code (including modules, functions, and classes) and list the corresponding unit tests, mocks, and tools.
 
-    Packages/Modules:
-        Frontend: Manages UI rendering and user interaction.
-        Backend:
-            User Service: Handles user profile, registration, login, and validation.
-            Authentication Service: Manages user authentication with Firebase.
-            Puzzle Service: Manages puzzle data fetching and validation.
-            Leaderboard Service: Manages leaderboard data retrieval and updates.
+#### Backend Source Code Structure
+
+    Modules:
+            User Service: Handles user saving to database, user profile updates and syncing with Firebase.
+            Sudoku Service: Manages puzzle data fetching and validation.
+            Sudoku Registry Service: Manages solved sudoku records and leaderboard data fetching.
+            Email Util: Helper for sending emails to users
         Database: Manages storage and retrieval of user data, puzzles, and leaderboard entries.
     Functions:
+        SudokuService:
+            get_random_sudoku_by_difficulty(): Gets a random sudoku by difficulty from the database
+            get_sudoku_by_id(): Gets a sudoku by id from the database
+            populate_sudoku_registry(): Populates the sudoku database
+            validate_sudoku(): Validates if a sudoku is solved
+        SudokuRegsitryService:
+            get_leaderboard_today(): Gets today's leaderboard
+            get_leaderboard_week(): Gets week's leaderboard
+            get_leaderboard_month(): Gets month's leaderboard
+            get_leaderboard_all_time(): Gets all time's leaderboard
+            get_leaderboard(): Gets a leaderboard by difficulty and optional beginning time
         UserService:
-            registerUser(): Registers a new user.
-            loginUser(): Validates user credentials.
-            getUserProfile(): Retrieves user data.
-        PuzzleService:
-            getPuzzleData(): Fetches puzzle details.
-            submitPuzzleSolution(): Validates and records a solution.
-        LeaderboardService:
-            getLeaderboard(): Retrieves leaderboard data.
-            updateLeaderboard(): Updates leaderboard after a new solution is submitted.
+            getUserByFirebaseId(): Gets user by associated Firebase id
+            createUser(): Creates user with associated Firebase id in the database
+            updateUser(): Updates user with associated Firebase id in the database
+            am_i_admin(): Checks if user with associated Firebase id is an admin
 
-Unit Tests:
-Test Case ID	Unit Test Description	Function	Mocking Required	Related Source Code Artifact
-UT1	Test successful user registration	registerUser()	Mock the AuthenticationService to simulate Firebase interaction.	UserService
-UT2	Test unsuccessful user registration with invalid data	registerUser()	Mock Firebase authentication to simulate invalid data.	UserService
-UT3	Test user login with valid credentials	loginUser()	Mock the database to return correct user data.	UserService
-UT4	Test puzzle data fetching	getPuzzleData()	Mock the database to return puzzle details.	PuzzleService
-UT5	Test puzzle solution validation with valid solution	submitPuzzleSolution()	Mock the database to check correct solution validation.	PuzzleService
-UT6	Test leaderboard retrieval for a specific puzzle difficulty	getLeaderboard()	Mock the leaderboard database to return data based on difficulty.	LeaderboardService
-UT7	Test leaderboard update after solving a puzzle	updateLeaderboard()	Mock leaderboard data to simulate updates.	LeaderboardService
-Required Mocks:
+#### Required Mocks
+Database Mocks: For simulating puzzle data retrieval during tests.
 
-    Authentication Service Mock: To simulate interaction with Firebase authentication for user registration and login tests.
-    Database Mocks: For simulating user, puzzle, and leaderboard data retrieval during tests.
-    Leaderboard Mocks: To simulate leaderboard updates and data retrieval.
-
-Testing Tools:
-
-    JUnit (Java) or pytest (Python): For unit testing individual functions and modules.
-    Mockito (Java) or unittest.mock (Python): For mocking external dependencies like the database and authentication service.
-    Postman or REST Assured: For integration testing of the REST API endpoints.
+#### Testing Tools
+pytest & pytest-cov: For unit testing individual functions and modules. And coverage reporting.
 
 ## Test Results
 ### Analysis
