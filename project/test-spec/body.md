@@ -1,26 +1,43 @@
-# Introduction
-# Test Plan
-## Testing Strategy
+# Test Specification Document
+
+## Introduction
+
+### Goal
+
+The goal of our testing is to ensure that our Puzzles website functions correctly, reliably, and securely, meeting both user expectations and project requirements. Through testing, we aim to identify and eliminate potential issues in functionality and usability before deploying the system to users.
+
+Our testing strategy includes both black-box testing and white-box testing. Black-box testing focuses on validating the system’s behavior by testing inputs and outputs against expected results without considering the internal code structure. White-box testing, on the other hand, involves examining the internal logic, structure, and individual components of the code to verify their correctness and robustness.
+
+By adopting a systematic and comprehensive testing process, we aim to deliver a high-quality product that is reliable under all expected conditions.
+
+### Contents and Organization
+The document is structured as follows:
+- Test Plan: Outline the overall strategy, subjects and methods used for testing
+- Test Results: Results and analysis of information gathered from our tests
+
+
+## Test Plan
+### Testing Strategy
     For unit testing, we used the Python pytest module and created some unit test files.
     For module integration tests, we have used the bottom up approach as our project was slowly built from the tinier parts first.
     For the system testing, we used the black box testing method to track down the bugs that would cause the website to generate incorrect results from the specified inputs.
 
-## Test Subjects
-### Backend Testing Subjects
+### Test Subjects
+#### Backend Testing Subjects
 
-#### User Authentication:
+##### User Authentication:
 
 - Ensure that the user registration, login, and authentication flow works correctly with external services like Firebase Authentication.
 - Validate the session management and token-based authentication (if implemented).
 - Check that invalid or unauthorized users are properly blocked.
 
-#### Puzzle Management:
+##### Puzzle Management:
 
 - Ensure that puzzles are fetched correctly based on user selection (e.g., easy, medium, hard).
 - Test the puzzle validation logic: Ensure that puzzle solutions are correctly validated (including checking for time limits and duplication).
 - Ensure that puzzle completion records are updated correctly in the database.
 
-#### Leaderboard Management:
+##### Leaderboard Management:
 
 Validate that the leaderboard correctly updates when a new puzzle is solved and that rankings are recalculated based on new completion times.
 Ensure that the system retrieves and displays the leaderboard data for specific categories (easy, medium, hard).
@@ -113,9 +130,6 @@ Conclusion
 
 Your testing specification should cover all these areas to ensure that each component of the system is thoroughly validated. The goal is to ensure that the entire system—frontend, backend, database, services, and APIs—works seamlessly together, while also focusing on edge cases, security, and performance to ensure a robust user experience.
 
-## Black Box Testing
-## White Box Testing
-
-# Test Results
-## Analysis
-## Logs
+## Test Results
+### Analysis
+### Logs
