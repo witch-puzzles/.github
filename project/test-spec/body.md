@@ -22,56 +22,32 @@ The document is structured as follows:
     For module integration tests, we have used the bottom up approach as our project was slowly built from the tinier parts first.
     For the system testing, we used the black box testing method to track down the bugs that would cause the website to generate incorrect results from the specified inputs.
 
-### Test Subjects
-#### Backend Testing Subjects
+## Test Subjects
+### Frontend Testing Subjects
 
-##### User Authentication:
+- Landing Page: Ensure that the landing page loads correctly and is responsive on various devices.
+- Login Page: Validate that users can log in using their email addresses and using Google, and that appropriate error messages are shown for invalid credentials.
+- Puzzle Solving Interface: Test the interface for selecting puzzles, displaying puzzle data, and interacting with the solution input.
+- Puzzle Solving Results: Ensure the system accurately accepts or rejects solutions, and provides appropriate feedback.
+- Leaderboard Updates: Test that leaderboard data is displayed correctly after updates to the table.
+- Profile Page: Ensure users can view their profile details.
 
-- Ensure that the user registration, login, and authentication flow works correctly with external services like Firebase Authentication.
-- Validate the session management and token-based authentication (if implemented).
-- Check that invalid or unauthorized users are properly blocked.
+### Backend Testing Subjects
 
-##### Puzzle Management:
-
+- Ensure that the user registration, login, and authentication flow works correctly with the Firebase Authentication service.
+- Check that invalid credentials are properly rejected.
 - Ensure that puzzles are fetched correctly based on user selection (e.g., easy, medium, hard).
-- Test the puzzle validation logic: Ensure that puzzle solutions are correctly validated (including checking for time limits and duplication).
 - Ensure that puzzle completion records are updated correctly in the database.
+- Validate that the leaderboard correctly updates when a new puzzle is solved and that rankings are recalculated based on new completion times.
 
-##### Leaderboard Management:
+### Database Testing Subjects
 
-Validate that the leaderboard correctly updates when a new puzzle is solved and that rankings are recalculated based on new completion times.
-Ensure that the system retrieves and displays the leaderboard data for specific categories (easy, medium, hard).
+- Validate the correct storage of user data after successful registration (e.g., name, email, password hash).
+- Test user data retrieval to ensure correct information is returned.
+- Ensure puzzle data is correctly stored and retrieved for each puzzle after populating the database.
+- Validate that leaderboard rankings are stored correctly, and that updates are performed when new solutions are logged.
 
-3. Database Testing
-
-The database stores user data, puzzle data, leaderboard rankings, and completion records. The tests here should focus on ensuring data integrity, retrieval, and storage efficiency.
-Test Subjects:
-
-    User Data Storage:
-        Validate the correct storage of user data (e.g., name, email, password hash).
-        Test user data retrieval (e.g., after login) to ensure correct information is returned.
-    Puzzle Data Storage:
-        Ensure puzzle data (metadata, difficulty, etc.) is correctly stored and retrieved for each puzzle.
-    Leaderboard Data Storage:
-        Validate that leaderboard rankings are stored correctly, and that updates are performed when new solutions are logged.
-        Test for data consistency and accuracy in the leaderboard records (e.g., rank order, timestamps).
-
-4. API Testing
-
-Since the frontend communicates with the backend via REST APIs, thorough API testing is required to ensure data flows correctly between these components.
-Test Subjects:
-
-    User API:
-        Test registration and login endpoints to ensure proper authentication and error handling.
-        Ensure that profile management APIs work correctly (e.g., updating user details).
-    Puzzle API:
-        Test endpoints for fetching puzzle data, submitting solutions, and validating answers.
-        Ensure the API correctly handles edge cases such as invalid solutions or time limits.
-    Leaderboard API:
-        Test endpoints for fetching leaderboard data, filtering by difficulty, and updating rankings.
-        Ensure the API returns accurate and correctly formatted leaderboard data.
-
-5. Functional Testing
+### Functional Testing
 
 Ensure that all the system components interact correctly and that the application functions as intended.
 Test Subjects:
