@@ -55,32 +55,16 @@ For system testing, we use both the black box and white box testing methods. We 
 - Validate that the leaderboard correctly updates when a new puzzle is solved and that rankings are recalculated based on new completion times.
 
 ### Black Box Testing – Equivalence Partitioning
-
-For black box testing, we will partition valid and invalid input values into equivalence classes. Here’s how we can define test cases based on the components in your system:
-Test Case Table
-Test Case ID	Description	Test Input	Expected Output	Mapped Use Case
-TC1	Test User Registration with valid data	Valid name, email (e.g., user@example.com), password (e.g., password123)	Success message (e.g., "Registration successful")	User Registration
-TC2	Test User Registration with invalid email format	Valid name, invalid email (e.g., user@com), valid password	Error message (e.g., "Invalid email format")	User Registration
-TC3	Test User Registration with missing password	Valid name, valid email (e.g., user@example.com), empty password	Error message (e.g., "Password is required")	User Registration
-TC4	Test Puzzle Fetching with valid puzzle ID	Valid puzzle ID (e.g., puzzle_01)	Puzzle data (e.g., {"id": "puzzle_01", "name": "Easy Puzzle", "difficulty": "easy"})	Puzzle Solving
-TC5	Test Puzzle Fetching with invalid puzzle ID	Invalid puzzle ID (e.g., invalid_puzzle_123)	Error message (e.g., "Puzzle not found")	Puzzle Solving
-TC6	Test Puzzle Submission with correct solution	Correct puzzle ID, solution within time limit	Success message (e.g., "Puzzle completed successfully")	Puzzle Solving
-TC7	Test Puzzle Submission with incorrect solution	Correct puzzle ID, incorrect solution	Error message (e.g., "Incorrect solution")	Puzzle Solving
-TC8	Test Leaderboard retrieval with valid puzzle difficulty	Difficulty level (e.g., "easy")	JSON leaderboard data (e.g., {"rank": 1, "user": "user1", "time": "2:00"})	Viewing the Leaderboard
-TC9	Test Leaderboard retrieval with invalid difficulty level	Invalid difficulty level (e.g., "extreme")	Error message (e.g., "Invalid difficulty level")	Viewing the Leaderboard
-TC10	Test User Login with valid credentials	Valid email, valid password	Success message (e.g., "Login successful")	User Registration (Login)
-TC11	Test User Login with incorrect password	Valid email, incorrect password	Error message (e.g., "Invalid credentials")	User Registration (Login)
-Equivalence Classes:
-
-    Valid Equivalence Classes:
-        For User Registration: Valid email (correct format), password length (minimum 6 characters), non-empty username.
-        For Puzzle Solving: Valid puzzle ID, valid time limits, correct solution format.
-        For Leaderboard Retrieval: Valid difficulty level ("easy", "medium", "hard").
-
-    Invalid Equivalence Classes:
-        For User Registration: Invalid email format, missing required fields (e.g., password), password too short.
-        For Puzzle Solving: Invalid puzzle ID, invalid solution format, solution not within allowed time.
-        For Leaderboard Retrieval: Invalid difficulty level ("extreme", "unknown").
+| **Description** | **Test Input** | **Expected Output** | **Mapped Use Case** |
+|---|---|---|---|
+| Test User Registration with valid data | Valid name, email, password | Registration successful | User Registration |
+| Test User Registration with invalid email format | Valid name, invalid email, valid password | Invalid email address error | User Registration |
+| Test User Registration with missing password | Valid name, valid email, empty password | Missing password field error | User Registration |
+| Test User Sign in using Google | None | Pop up for sign in | User Registration |
+| Test Random Puzzle Fetching | None | Puzzle information | Puzzle Solving |
+| Test Puzzle Submission with correct solution | Correct puzzle solution | Success message | Puzzle Solving |
+| Test Puzzle Submission with incorrect solution | Incorrect puzzle solution | Incorrect solution error | Puzzle Solving |
+| Test Leaderboard retrieval in a time range | Difficulty level, time interval | Leaderboard information | Viewing the Leaderboard |
 
 ### White Box Testing
 
