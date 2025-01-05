@@ -19,9 +19,18 @@ The document is structured as follows:
 ## Test Plan
 
 ### Testing Strategy
-    For unit testing, we used the Python pytest module and created some unit test files.
-    For module integration tests, we have used the bottom up approach as our project was slowly built from the tinier parts first.
-    For the system testing, we used the black box testing method to track down the bugs that would cause the website to generate incorrect results from the specified inputs.
+
+#### Unit Testing
+
+We use pytest for unit testing, focusing on individual components like functions, methods, and classes to ensure they behave correctly. Unit tests are written for several different modules to check logic, edge cases, and proper error handling.
+
+#### Integration Testing
+
+We follow a bottom-up approach to integration testing, starting with lower-level services and building upwards. This ensures smooth interaction between modules, such as the correct flow of data between backend services and the database, and proper API communication.
+
+#### System Testing
+
+For system testing, we use both the black box and white box testing methods. We validate that the website produces correct outputs based on specified inputs and handles edge cases appropriately.
 
 ## Test Subjects
 ### Frontend Testing Subjects
@@ -42,7 +51,7 @@ The document is structured as follows:
 - Ensure that generating, solving and cathegorizing puzzles generates proper results and does not cause high stress on the machine.
 - Ensure puzzle data is correctly stored for each puzzle after populating the database.
 - Ensure that puzzles are fetched correctly based on user selection (e.g., easy, medium, hard).
-- Ensure that puzzle completion records are updated correctly in the database.
+- Ensure that puzzle completion recordfs are updated correctly in the database.
 - Validate that the leaderboard correctly updates when a new puzzle is solved and that rankings are recalculated based on new completion times.
 
 ## Test Results
