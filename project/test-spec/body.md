@@ -17,6 +17,7 @@ The document is structured as follows:
 
 
 ## Test Plan
+
 ### Testing Strategy
     For unit testing, we used the Python pytest module and created some unit test files.
     For module integration tests, we have used the bottom up approach as our project was slowly built from the tinier parts first.
@@ -105,3 +106,10 @@ Your testing specification should cover all these areas to ensure that each comp
 ## Test Results
 ### Analysis
 ### Logs
+![](assets/tests/sudoku_grid.jpeg)
+![](assets/tests/sudoku_registry_repository.jpeg)
+![](assets/tests/sudoku_registry_service.jpeg)
+![](assets/tests/sudoku_repository.jpeg)
+![](assets/tests/sudoku_service.jpeg)
+![](assets/tests/user_repository.jpeg)
+![](assets/tests/user_service.jpeg)
